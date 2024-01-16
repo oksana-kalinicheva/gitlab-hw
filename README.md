@@ -81,9 +81,9 @@
 
 ### Решение 3
 
-[md-фал](https://github.com/oksana-kalinicheva/gitlab-hw/blob/main/README.md)
+MD-файл: (https://github.com/oksana-kalinicheva/gitlab-hw/blob/main/README.md)
 
-Cкриншот - https://ibb.co/9bQnV5d
+Cкриншот: https://ibb.co/9bQnV5d
 
 ---
 ## Дополнительные задания* (со звёздочкой)
