@@ -13,9 +13,9 @@
 
 ### Решение 1
 
-![Скриншот-1](https://github.com/oksana-kalinicheva/gitlab-hw/tree/main/img/Screenshot_1.jpg)
-![Скриншот-2](https://github.com/oksana-kalinicheva/gitlab-hw/tree/main/img/Screenshot_2.jpg)
-![Скриншот-3](https://github.com/oksana-kalinicheva/gitlab-hw/tree/main/img/Screenshot_3-1.jpg)
+![Скриншот-1](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_1.jpg)
+![Скриншот-2](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_2.jpg)
+![Скриншот-3](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_3-1.jpg)
 
 ---
 ### Задание 2
@@ -29,8 +29,8 @@
 
 ### Решение 2
 
-![Скриншот-4](https://github.com/oksana-kalinicheva/gitlab-hw/tree/main/img/Screenshot_4.jpg)
-![Скриншот-5](https://github.com/oksana-kalinicheva/gitlab-hw/tree/main/img/Screenshot_5.jpg)
+![Скриншот-4](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_4.jpg)
+![Скриншот-5](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_5.jpg)
 
 ---
 ### Задание 3
@@ -47,8 +47,8 @@
 
 ### Решение 3
 
-![Скриншот-6](https://github.com/oksana-kalinicheva/gitlab-hw/tree/main/img/Screenshot_6.jpg)
-![Скриншот-7](https://github.com/oksana-kalinicheva/gitlab-hw/tree/main/img/Screenshot_7.jpg)
+![Скриншот-6](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_6.jpg)
+![Скриншот-7](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_7.jpg)
 ---
 ## Дополнительные задания* (со звёздочкой)
 
