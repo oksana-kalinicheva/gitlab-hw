@@ -1,54 +1,55 @@
-# Домашнее задание к занятию "Что такое DevOps. CI/CD" - Калиничева Оксана
+# Домашнее задание к занятию "GitLab" - Калиничева Оксана
 
 ### Задание 1
 
 **Что нужно сделать:**
 
-1. Установите себе jenkins по инструкции из лекции или любым другим способом из официальной документации. Использовать Docker в этом задании нежелательно.
-2. Установите на машину с jenkins [golang](https://golang.org/doc/install).
-3. Используя свой аккаунт на GitHub, сделайте себе форк [репозитория](https://github.com/netology-code/sdvps-materials.git). В этом же репозитории находится [дополнительный материал для выполнения ДЗ](https://github.com/netology-code/sdvps-materials/blob/main/CICD/8.2-hw.md).
-3. Создайте в jenkins Freestyle Project, подключите получившийся репозиторий к нему и произведите запуск тестов и сборку проекта ```go test .``` и  ```docker build .```.
+1. Разверните GitLab локально, используя Vagrantfile и инструкцию, описанные в [этом репозитории](https://github.com/netology-code/sdvps-materials/tree/main/gitlab).   
+2. Создайте новый проект и пустой репозиторий в нём.
+3. Зарегистрируйте gitlab-runner для этого проекта и запустите его в режиме Docker. Раннер можно регистрировать и запускать на той же виртуальной машине, на которой запущен GitLab.
 
-В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
+В качестве ответа в репозиторий шаблона с решением добавьте скриншоты с настройками раннера в проекте.
 
 ### Решение 1
 
-![Скриншот-1](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_1.jpg)
-![Скриншот-2](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_2.jpg)
-![Скриншот-3](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_3-1.jpg)
+![Скриншот-1](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_gitlab/img/gitlab-1.jpg)
+![Скриншот-2](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_gitlab/img/gitlab-2.jpg)
 
 ---
 ### Задание 2
 
 **Что нужно сделать:**
 
-1. Создайте новый проект pipeline.
-2. Перепишите сборку из задания 1 на declarative в виде кода.
+1. Запушьте [репозиторий](https://github.com/netology-code/sdvps-materials/tree/main/gitlab) на GitLab, изменив origin. Это изучалось на занятии по Git.
+2. Создайте .gitlab-ci.yml, описав в нём все необходимые, на ваш взгляд, этапы.
 
-В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
+В качестве ответа в шаблон с решением добавьте: 
+   
+ * файл gitlab-ci.yml для своего проекта или вставьте код в соответствующее поле в шаблоне; 
+ * скриншоты с успешно собранными сборками.
 
 ### Решение 2
 
-![Скриншот-4](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_4.jpg)
-![Скриншот-5](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_5.jpg)
+```
+stages:
+  - test
+  - build
 
----
-### Задание 3
+test:
+  stage: test
+  image: golang:1.17
+  script: 
+   - go test .
 
-**Что нужно сделать:**
+build:
+  stage: build
+  image: docker:latest
+  script:
+   - docker build .
+```
+![Скриншот-3](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_gitlab/img/gitlab-3.jpg)
+![Скриншот-4](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_gitlab/img/gitlab-4.jpg)
 
-1. Установите на машину Nexus.
-1. Создайте raw-hosted репозиторий.
-1. Измените pipeline так, чтобы вместо Docker-образа собирался бинарный go-файл. Команду можно скопировать из Dockerfile.
-1. Загрузите файл в репозиторий с помощью jenkins.
-
-В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
-
-
-### Решение 3
-
-![Скриншот-6](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_6.jpg)
-![Скриншот-7](https://github.com/oksana-kalinicheva/gitlab-hw/blob/8-03_ci_cd/img/Screenshot_7.jpg)
 ---
 ## Дополнительные задания* (со звёздочкой)
 
@@ -56,10 +57,11 @@
 
 ---
 
-### Задание 4*
+### Задание 3*
 
-Придумайте способ версионировать приложение, чтобы каждый следующий запуск сборки присваивал имени файла новую версию. Таким образом, в репозитории Nexus будет храниться история релизов.
+Измените CI так, чтобы:
 
-Подсказка: используйте переменную BUILD_NUMBER.
+ - этап сборки запускался сразу, не дожидаясь результатов тестов;
+ - тесты запускались только при изменении файлов с расширением *.go.
 
-В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
+В качестве ответа добавьте в шаблон с решением файл gitlab-ci.yml своего проекта или вставьте код в соответсвующее поле в шаблоне.
