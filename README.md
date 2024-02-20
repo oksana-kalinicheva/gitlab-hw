@@ -16,6 +16,10 @@
 
 ![Задание 1](https://github.com/oksana-kalinicheva/gitlab-hw/blob/hw-02-zabbix-02/img/zbx_1.jpg)
 
+![Задание 1](https://github.com/oksana-kalinicheva/gitlab-hw/blob/hw-02-zabbix-02/img/zbx_1-1.jpg)
+
+![Задание 1](https://github.com/oksana-kalinicheva/gitlab-hw/blob/hw-02-zabbix-02/img/zbx_1-2.jpg)
+
 ---
 ### Задание 2
 Добавьте в Zabbix два хоста и задайте им имена <фамилия и инициалы-1> и <фамилия и инициалы-2>. Например: ivanovii-1 и ivanovii-2.
@@ -47,6 +51,10 @@
 ### Решение 2-3
 
 ![Задание 2-3](https://github.com/oksana-kalinicheva/gitlab-hw/blob/hw-02-zabbix-02/img/zbx_2.jpg)
+
+![Задание 2-3](https://github.com/oksana-kalinicheva/gitlab-hw/blob/hw-02-zabbix-02/img/zbx_2-1.jpg)
+
+![Задание 2-3](https://github.com/oksana-kalinicheva/gitlab-hw/blob/hw-02-zabbix-02/img/zbx_2-2.jpg)
 
 ---
 
