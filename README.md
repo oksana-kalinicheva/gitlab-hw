@@ -15,7 +15,8 @@
 
 ### Решение 1
 
-[Конфиг 1 haproxy](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sfit-02/files/haproxy.cfg)
+[Ссылка на конфиг haproxy](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sfit-02/files/haproxy.cfg)
+
 ![Скриншот](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sfit-02/img/haproxy-1.jpg)
 
 ---
@@ -27,7 +28,8 @@
 
 ### Решение 2
 
-[Конфиг 2 haproxy](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sfit-02/files/haproxy-2.cfg)
+[Ссылка на конфиг haproxy](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sfit-02/files/haproxy-2.cfg)
+
 ![Скриншот](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sfit-02/img/haproxy-2.jpg)
 
 ------
