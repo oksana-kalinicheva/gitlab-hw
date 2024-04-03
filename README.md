@@ -9,7 +9,7 @@
 
 ### Решение 1
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_01.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_01.jpg)
 
 ---
 
@@ -34,13 +34,13 @@ $ pip install pika
 
 ### Решение 2
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_02.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_02.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_03.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_03.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_04.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_04.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_05.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_05.jpg)
 
 ---
 
@@ -79,21 +79,21 @@ $ rabbitmqadmin get queue='hello'
 
 ### Решение 3
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_06.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_06.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_07.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_07.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_08.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_08.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_09.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_09.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_10.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_10.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_11.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_11.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_12.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_12.jpg)
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_13.jpg.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-11-04/img/sdb-11-04_13.jpg)
 
 ---
 
