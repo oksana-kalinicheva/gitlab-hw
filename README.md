@@ -48,9 +48,9 @@ WHERE DATE(p.payment_date) = '2005-07-30'
 
 Узкие места и оптимизация:
 
-1. Seq Scan on payment p и Filter: (date(payment_date) = '2005-07-30'::date): Необходимо добавить индекс на payment_date, чтобы ускорить поиск по дате.
+1. Необходимо добавить индекс на payment_date, чтобы ускорить поиск по дате.
 
-2. Hash Join (cost=1.05..52.21 rows=10 width=16): Используется хеш-соединение, что может быть неэффективно при больших объемах данных. Необходимо добавить индексы на соединяемые столбцы payment.payment_date, rental.rental_date, rental.customer_id, и inventory.inventory_id.
+2. Используется хеш-соединение, что может быть неэффективно при больших объемах данных. Необходимо добавить индексы на соединяемые столбцы payment.payment_date, rental.rental_date, rental.customer_id, и inventory.inventory_id.
 
 Оптимизированный запрос:
 
