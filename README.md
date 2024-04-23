@@ -29,7 +29,25 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 ### Решение 2
 
+Исходный запрос:
+
+```
+EXPLAIN ANALYZE
+SELECT DISTINCT CONCAT(c.last_name, ' ', c.first_name), 
+       SUM(p.amount) OVER (PARTITION BY c.customer_id, f.title)
+FROM payment p, 
+     rental r, 
+     customer c, 
+     inventory i, 
+     film f
+WHERE DATE(p.payment_date) = '2005-07-30' 
+  AND p.payment_date = r.rental_date 
+  AND r.customer_id = c.customer_id 
+  AND i.inventory_id = r.inventory_id;
+```
+
 Узкие места и оптимизация:
+
 1. Seq Scan on payment p и Filter: (date(payment_date) = '2005-07-30'::date): Необходимо добавить индекс на payment_date, чтобы ускорить поиск по дате.
 
 2. Hash Join (cost=1.05..52.21 rows=10 width=16): Используется хеш-соединение, что может быть неэффективно при больших объемах данных. Необходимо добавить индексы на соединяемые столбцы payment.payment_date, rental.rental_date, rental.customer_id, и inventory.inventory_id.
