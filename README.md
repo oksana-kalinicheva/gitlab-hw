@@ -46,37 +46,25 @@ WHERE DATE(p.payment_date) = '2005-07-30'
   AND i.inventory_id = r.inventory_id;
 ```
 
-Узкие места и оптимизация:
-
-1. Необходимо добавить индекс на payment_date, чтобы ускорить поиск по дате.
-
-2. Используется хеш-соединение, что может быть неэффективно при больших объемах данных. Необходимо добавить индексы на соединяемые столбцы payment.payment_date, rental.rental_date, rental.customer_id, и inventory.inventory_id.
+Узкие места и оптимизация: необходимо добавить индекс на payment_date, чтобы ускорить поиск по дате.
 
 Оптимизированный запрос:
 
 ```
 EXPLAIN ANALYZE
-SELECT 
-    CONCAT(c.last_name, ' ', c.first_name) AS "Customer Name",
-    SUM(p.amount) OVER (PARTITION BY c.customer_id, f.title) AS "Total Amount"
-FROM 
-    payment p
-JOIN 
-    rental r ON p.payment_date = r.rental_date
-JOIN 
-    customer c ON r.customer_id = c.customer_id
-JOIN 
-    inventory i ON r.inventory_id = i.inventory_id
-JOIN 
-    film f ON i.film_id = f.film_id
-WHERE 
-    p.payment_date = '2005-07-30';
+SELECT DISTINCT CONCAT(c.last_name, ' ', c.first_name) AS "Customer Name", 
+                SUM(p.amount) OVER (PARTITION BY c.customer_id, f.title) AS "Total Amount"
+FROM payment p
+JOIN rental r ON p.payment_date = r.rental_date
+JOIN customer c ON r.customer_id = c.customer_id
+JOIN inventory i ON r.inventory_id = i.inventory_id
+JOIN film f ON i.film_id = f.film_id
+WHERE p.payment_date >= '2005-07-30' AND p.payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY);
 
 CREATE INDEX payment_date_idx ON payment (payment_date);
-CREATE INDEX rental_date_idx ON rental (rental_date);
-CREATE INDEX rental_customer_id_idx ON rental (customer_id);
-CREATE INDEX inventory_inventory_id_idx ON inventory (inventory_id);
 ```
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-12-05/img/sdb-12-05_01.jpg)
+
 ---
 
 ## Дополнительные задания (со звёздочкой*)
