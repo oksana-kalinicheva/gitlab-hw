@@ -1,77 +1,43 @@
-# Домашнее задание к занятию «Индексы» - Калиничева Оксана
+# Домашнее задание к занятию «Защита хоста» - Калиничева Оксана
 
 ### Задание 1
 
-Напишите запрос к учебной базе данных, который вернёт процентное отношение общего размера всех индексов к общему размеру всех таблиц.
+1. Установите **eCryptfs**.
+2. Добавьте пользователя cryptouser.
+3. Зашифруйте домашний каталог пользователя с помощью eCryptfs.
+
+
+*В качестве ответа  пришлите снимки экрана домашнего каталога пользователя с исходными и зашифрованными данными.*  
 
 ### Решение 1
 
-```
-SELECT 
-    ROUND(SUM(INDEX_LENGTH) / SUM(DATA_LENGTH) * 100, 2) AS "Процентное отношение размера индексов к размеру таблиц"
-FROM 
-    information_schema.TABLES
-WHERE 
-    TABLE_SCHEMA = 'sakila';
-```
----
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-02/img/sdb-13-02_01.jpg)
+
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-02/img/sdb-13-02_02.jpg)
 
 ### Задание 2
 
-Выполните explain analyze следующего запроса:
-```sql
-select distinct concat(c.last_name, ' ', c.first_name), sum(p.amount) over (partition by c.customer_id, f.title)
-from payment p, rental r, customer c, inventory i, film f
-where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and r.customer_id = c.customer_id and i.inventory_id = r.inventory_id
-```
-- перечислите узкие места;
-- оптимизируйте запрос: внесите корректировки по использованию операторов, при необходимости добавьте индексы.
+1. Установите поддержку **LUKS**.
+2. Создайте небольшой раздел, например, 100 Мб.
+3. Зашифруйте созданный раздел с помощью LUKS.
+
+*В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.*
 
 ### Решение 2
 
-Исходный запрос:
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-02/img/sdb-13-02_03.jpg)
 
-```
-EXPLAIN ANALYZE
-SELECT DISTINCT CONCAT(c.last_name, ' ', c.first_name), 
-       SUM(p.amount) OVER (PARTITION BY c.customer_id, f.title)
-FROM payment p, 
-     rental r, 
-     customer c, 
-     inventory i, 
-     film f
-WHERE DATE(p.payment_date) = '2005-07-30' 
-  AND p.payment_date = r.rental_date 
-  AND r.customer_id = c.customer_id 
-  AND i.inventory_id = r.inventory_id;
-```
-
-Узкие места и оптимизация: необходимо добавить индекс на payment_date, чтобы ускорить поиск по дате.
-
-Оптимизированный запрос:
-
-```
-EXPLAIN ANALYZE
-SELECT DISTINCT CONCAT(c.last_name, ' ', c.first_name) AS "Customer Name", 
-                SUM(p.amount) OVER (PARTITION BY c.customer_id, f.title) AS "Total Amount"
-FROM payment p
-JOIN rental r ON p.payment_date = r.rental_date
-JOIN customer c ON r.customer_id = c.customer_id
-JOIN inventory i ON r.inventory_id = i.inventory_id
-JOIN film f ON i.film_id = f.film_id
-WHERE p.payment_date >= '2005-07-30' AND p.payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY);
-
-CREATE INDEX payment_date_idx ON payment (payment_date);
-```
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-12-05/img/sdb-12-05_01.jpg)
-
----
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-02/img/sdb-13-02_04.jpg)
 
 ## Дополнительные задания (со звёздочкой*)
-Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
 
-### Задание 3*
+Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале
 
-Самостоятельно изучите, какие типы индексов используются в PostgreSQL. Перечислите те индексы, которые используются в PostgreSQL, а в MySQL — нет.
+### Задание 3 *
 
-*Приведите ответ в свободной форме.*
+1. Установите **apparmor**.
+2. Повторите эксперимент, указанный в лекции.
+3. Отключите (удалите) apparmor.
+
+
+*В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.*
