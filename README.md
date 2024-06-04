@@ -34,7 +34,7 @@
 
 **Лог suricata:**
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03_-01.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03-01.jpg)
 
 В логе suricata была зафиксирована подозрительная активность, направленная на различные порты баз данных и VNC на хосте с IP-адресом 192.168.1.185. 
 Активность исходит от хоста с IP-адресом 192.168.1.2.
@@ -46,7 +46,7 @@
 
 **Лог fail2ban:**
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03_-02.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03-02.jpg)
 
 В логе fail2ban данные действия не отразились.
 ------
@@ -78,14 +78,14 @@
 
 При выключенном fail2ban атака на подбор пароля для службы SSH удалась.
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03_-03.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03-03.jpg)
 
 В логе suricata была зафиксирована данная активность:
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03_-04.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03-04.jpg)
 
 При включенном fail2ban атака на подбор пароля для службы SSH не удалась.
 
 Лог fail2ban:
 
-![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03_-05.jpg)
+![](https://github.com/oksana-kalinicheva/gitlab-hw/blob/sdb-13-03/img/sdb-13-03-05.jpg)
